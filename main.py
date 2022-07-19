@@ -1,15 +1,40 @@
-# 🚨 Don't change the code below 👇
-year = int(input("Which year do you want to check? "))
-# 🚨 Don't change the code above 👆
+def is_leap(year):
+  if year % 4 == 0:
+    if year % 100 == 0:
+      if year % 400 == 0:
+        return True
+      else:
+        return False
+    else:
+      return True
+  else:
+    return False
 
-#Write your code below this line 👇
+def days_in_month(year, month):
+  month_days = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]  
+  if is_leap(year) and month == 2:
+    return 29
+  else:
+    return month_days[month - 1]
+      
+  
+  
+#🚨 Do NOT change any of the code below 
+year = int(input("Enter a year: "))
+month = int(input("Enter a month: "))
+days = days_in_month(year, month)
+print(days)
 
-if year % 4 != 0:
-    print("Not leap year.")
-elif year % 100 != 0:
-    print("Leap year.")
-elif year % 400 != 0:
-    print("Not leap year.")
-else:
-    print("Leap year.")
+
+
+
+
+
+
+
+
+
+
+
+
 
